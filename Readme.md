@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
-* Студент: [Даниил Синицын](https://up.htmlacademy.ru/javascript/20/user/928917).
-* Наставник: `Неизвестно`.
+* Студент: [Даниил Синицын](https://up.htmlacademy.ru/javascript/19/user/928917).
+* Наставник: [Ярослав Ермилов](https://htmlacademy.ru/profile/id776985).
 
 ---
 
@@ -48,5 +48,5 @@ git clone SSH-адрес_вашего_форка
 
 Репозиторий создан для обучения на интенсивном онлайн‑курсе «[Профессиональный JavaScript](https://htmlacademy.ru/intensive/javascript)», уровень 1 от [HTML Academy](https://htmlacademy.ru).
 
-[travis-image]: https://travis-ci.com/htmlacademy-javascript/928917-keksobooking-20.svg?branch=master
-[travis-url]: https://travis-ci.com/htmlacademy-javascript/928917-keksobooking-20
+[travis-image]: https://travis-ci.com/htmlacademy-javascript/928917-keksobooking-19.svg?branch=master
+[travis-url]: https://travis-ci.com/htmlacademy-javascript/928917-keksobooking-19
