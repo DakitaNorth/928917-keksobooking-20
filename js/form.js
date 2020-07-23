@@ -194,6 +194,7 @@
     window.mapFilter.reset();
     window.showCard.utilClose(cardsCollecton);
     window.mainPin.style = 'left: 570px; top: 375px;';
+    window.mainPinClickCounter = 0;
   });
 
   window.form = {

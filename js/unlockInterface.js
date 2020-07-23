@@ -2,6 +2,7 @@
 (function () {
   var ENTER_BUTTON = 'Enter';
 
+  window.mainPinClickCounter = 0;
   window.mainPin = document.querySelector('.map__pin--main');
 
   var unlockInterface = function () {
@@ -55,7 +56,10 @@
   function onPinMainClick(e) {
     switch (e.button) {
       case 0:
-        window.load(onSuccess, onError);
+        if (window.mainPinClickCounter < 1) {
+          window.load(onSuccess, onError);
+          window.mainPinClickCounter += 1;
+        }
     }
   }
 
