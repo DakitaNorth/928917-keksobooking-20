@@ -26,36 +26,8 @@
     window.form.form.classList.add('ad-form--disabled');
   };
 
-  function onPinMainClick(e) {
-    switch (e.button) {
-      case 0:
-        unlockInterface();
-        if (window.pin.mapPinsList.children.length === 2) {
-          window.filterPins();
-          window.map.addingPins();
-          window.map.addingCards();
-          window.showCard.cardOpen();
-        }
-        window.form.mainPinСoordinates();
-    }
-  }
-
-  function onPinMainKeydown(q) {
-    if (q.key === ENTER_BUTTON) {
-      unlockInterface();
-      if (window.pin.mapPinsList.children.length === 2) {
-        window.filterPins();
-        window.map.addingPins();
-        window.map.addingCards();
-        window.showCard.cardOpen();
-      }
-      window.form.mainPinСoordinates();
-    }
-  }
-
   var onSuccess = function () {
-    window.mainPin.addEventListener('mousedown', onPinMainClick);
-    window.mainPin.addEventListener('keydown', onPinMainKeydown);
+    activetedInterface();
   };
 
   var onError = function (errorMessage) {
@@ -69,7 +41,32 @@
     document.body.insertAdjacentElement('afterbegin', node);
   };
 
-  window.load(onSuccess, onError);
+  var activetedInterface = function () {
+    unlockInterface();
+    if (window.pin.mapPinsList.children.length === 2) {
+      window.filterPins();
+      window.map.addingPins();
+      window.map.addingCards();
+      window.showCard.cardOpen();
+    }
+    window.form.mainPinCoordinates();
+  }
+
+  function onPinMainClick(e) {
+    switch (e.button) {
+      case 0:
+        window.load(onSuccess, onError);
+    }
+  }
+
+  function onPinMainKeydown(q) {
+    if (q.key === ENTER_BUTTON) {
+      window.load(onSuccess, onError);
+    }
+  }
+
+  window.mainPin.addEventListener('mousedown', onPinMainClick);
+  window.mainPin.addEventListener('keydown', onPinMainKeydown);
 
   window.mainPin.addEventListener('mousedown', function (evt) {
     evt.preventDefault();
@@ -88,7 +85,7 @@
 
     var onMouseMove = function (moveEvt) {
       moveEvt.preventDefault();
-      window.form.mainPinСoordinates();
+      window.form.mainPinCoordinates();
 
       var shift = {
         x: startCoords.x - moveEvt.clientX,

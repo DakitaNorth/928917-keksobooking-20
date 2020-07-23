@@ -1,5 +1,10 @@
 'use strict';
 (function () {
+  var FLAT_PRICE = 1000;
+  var HOUSE_PRICE = 5000;
+  var PALACE_PRICE = 10000;
+  var BUNGALO_PRICE = 0;
+
   var form = document.querySelector('.ad-form');
   var formFieldsets = form.children;
   var formFilters = document.querySelector('.map__filters').children;
@@ -71,20 +76,20 @@
   typeHousingField.addEventListener('change', function () {
     var value = typeHousingField.value;
     if (value === 'bungalo') {
-      housingPrice.setAttribute('min', 0);
-      housingPrice.placeholder = 0;
+      housingPrice.setAttribute('min', BUNGALO_PRICE);
+      housingPrice.placeholder = BUNGALO_PRICE;
     }
     if (value === 'flat') {
-      housingPrice.setAttribute('min', 1000);
-      housingPrice.placeholder = 1000;
+      housingPrice.setAttribute('min', FLAT_PRICE);
+      housingPrice.placeholder = FLAT_PRICE;
     }
     if (value === 'house') {
-      housingPrice.setAttribute('min', 5000);
-      housingPrice.placeholder = 5000;
+      housingPrice.setAttribute('min', HOUSE_PRICE);
+      housingPrice.placeholder = HOUSE_PRICE;
     }
     if (value === 'palace') {
-      housingPrice.setAttribute('min', 10000);
-      housingPrice.placeholder = 10000;
+      housingPrice.setAttribute('min', PALACE_PRICE);
+      housingPrice.placeholder = PALACE_PRICE;
     }
   });
 
@@ -144,8 +149,8 @@
     window.lockInterface();
     window.map.removalPins();
 
-    housingPrice.setAttribute('min', 1000);
-    housingPrice.placeholder = 1000;
+    housingPrice.setAttribute('min', FLAT_PRICE);
+    housingPrice.placeholder = FLAT_PRICE;
     housingPrice.style = 'border: none';
 
     document.querySelector('.success').classList.remove('hidden');
@@ -179,8 +184,8 @@
     window.lockInterface();
     window.map.removalPins();
 
-    housingPrice.setAttribute('min', 1000);
-    housingPrice.placeholder = 1000;
+    housingPrice.setAttribute('min', FLAT_PRICE);
+    housingPrice.placeholder = FLAT_PRICE;
     housingPrice.style = 'border: none';
 
     titleField.style = 'border: none';
@@ -196,11 +201,11 @@
     formFieldsets: form.children,
     formFilters: document.querySelector('.map__filters').children,
     form: document.querySelector('.ad-form'),
-    mainPinСoordinates: function () {
+    mainPinCoordinates: function () {
       var posY = window.mainPin.offsetTop;
       var posX = window.mainPin.offsetLeft;
 
-      adressField.value = 'x: ' + posX + ' ' + 'y: ' + posY;
+      adressField.value = posX + ', ' + posY;
       adressField.setAttribute('readonly', 'readonly');
     }
   };
