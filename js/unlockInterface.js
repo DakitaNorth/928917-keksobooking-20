@@ -50,7 +50,7 @@
       window.showCard.cardOpen();
     }
     window.form.mainPinCoordinates();
-  }
+  };
 
   function onPinMainClick(e) {
     switch (e.button) {
